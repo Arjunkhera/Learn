@@ -52,7 +52,10 @@ console.log(val);
 function makeUser(name, age) {
     return {
       name, // same as name: name
-      age   // same as age: age
+      age,   // same as age: age
+      sayHello() {
+        console.log(`Hello ${name}`);
+      },
       // ...
     };
 }
