@@ -1,4 +1,26 @@
+
+// Two ways to declare arrays
+// Method 1 : frequently used and preferred
+const methodFirst = [1,2,3];
+console.log(`Method First ${methodFirst}`);
+// Method 2 : results in defining 4 undefined elements
+const methodSecond = new Array(4);
+console.log(`Method Second ${methodSecond}`);
+
+// Arrays are like objects, don't use them like that
+// Results in losing optimization
+const arraysAreObjects = [1,2,3];
+console.log(`Array type is Object ${typeof arraysAreObjects}`);
+arraysAreObjects.someProperty = "someValue";
+console.log(`Don't do this ${arraysAreObjects.someProperty}`);
+
+// Because arrays are objects, we can store anything
+const storeAnything = [1,"2", true, function(){console.log('hello')}];
+console.log(`Store everything ${storeAnything}`);
+
+
 const numbers = [43,56,33,23,44,36,5];
+
 const numbers2 = new Array(22,45,33,76,54);
 
 const vehicles = ['car','bus','train'];
@@ -75,5 +97,3 @@ function under50(num) {
 val = numbers.find(under50);
 
 
-console.log(numbers);
-console.log(val);
