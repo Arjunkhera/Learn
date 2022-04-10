@@ -1,4 +1,3 @@
-
 // Two ways to declare arrays
 // Method 1 : frequently used and preferred
 const methodFirst = [1,2,3];
@@ -18,37 +17,59 @@ console.log(`Don't do this ${arraysAreObjects.someProperty}`);
 const storeAnything = [1,"2", true, function(){console.log('hello')}];
 console.log(`Store everything ${storeAnything}`);
 
+// Adding/Removing elements
+const originalArray = [2,3,4,5];
+console.log(`Original Array ${originalArray}`);
+
+// From the end : Preferred
+originalArray.push(6);
+console.log(`Push 6: ${originalArray}`);
+originalArray.pop(6);
+console.log(`Pop 6: ${originalArray}`);
+
+// From the start : avoid this!!
+originalArray.unshift(1);
+console.log(`Unshit 1: ${originalArray}`);
+originalArray.shift(1);
+console.log(`Shift 1: ${originalArray}`);
+
+// Looping over array
+
+// Original indexing method
+console.log(`Looping using indexing`);
+for(let i = 0; i < originalArray.length; i++) {
+    console.log(`Index: ${i} Value: ${originalArray[i]}`);
+}
+
+// for of : directly gives values and no index
+console.log(`Looping using for of`);
+for(let value of originalArray) {
+    console.log(`Value: ${value}`);
+}
+
+// for in : don't use this, primarily for objects and is slower
+// also this results in printing keys you don't want to see 
+console.log(`Looping using for in`);
+for(let key in originalArray) {
+    console.log(`Key:${key} Value: ${originalArray[key]}`);
+}
+
+// You can modify length property directly
+const modifyLength = [1,2,3,4];
+
+// Increasing length adds undefined elements
+modifyLength.length = 10;
+console.log(`You will see undefined elements: ${modifyLength}`);
+
+// Decreasing length truncates the size
+modifyLength.length = 2;
+console.log(`Remove the elements: ${modifyLength}`);
+
 
 const numbers = [43,56,33,23,44,36,5];
-
 const numbers2 = new Array(22,45,33,76,54);
-
 const vehicles = ['car','bus','train'];
-const mixed = [22,'Hello', true, undefined, null, {a:1, b:1}, new Date()];
-
 let val;
-
-// get array length
-val = numbers.length;
-// check if its an array
-val = Array.isArray(numbers);
-// get a single value
-val = numbers[2];
-// insert into array
-numbers[2] = 100;
-// find index of value
-val = numbers.indexOf(36);
-
-// Mutating arrays
-// add from last
-numbers.push(250);
-// add from front
-numbers.unshift(120);
-// remove from end
-numbers.pop();
-// remove from front
-numbers.shift();
-
 
 // slice, splice and split
 
